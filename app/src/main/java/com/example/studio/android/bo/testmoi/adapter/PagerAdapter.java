@@ -1,10 +1,12 @@
-package com.example.studio.android.bo.testmoi;
+package com.example.studio.android.bo.testmoi.adapter;
 
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentManager;
+
+import com.example.studio.android.bo.testmoi.PageFragment;
 
 /**
  *

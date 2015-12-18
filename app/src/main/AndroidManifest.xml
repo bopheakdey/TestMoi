@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.SearchLocation"
+            android:label="@string/title_activity_search_location"
+            android:theme="@android:style/Theme.Holo.NoActionBar"></activity>
     </application>
 
 </manifest>
