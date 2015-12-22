@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentManager;
 
 import com.example.studio.android.bo.testmoi.PageFragment;
+import com.example.studio.android.bo.testmoi.fragment.ChatPageDisplayFragment;
+import com.example.studio.android.bo.testmoi.fragment.WishHouseFragment;
 
 /**
  *
@@ -26,9 +28,9 @@ public class PagerAdapter extends FragmentPagerAdapter {
         if(position==0){
             fragment = new PageFragment();
         }else if (position == 1){
-            fragment = new PageFragment();
+            fragment = new ChatPageDisplayFragment();
         }else if(position ==2){
-            fragment = new PageFragment();
+            fragment = new WishHouseFragment();
         }
         return fragment;
     }
@@ -41,14 +43,14 @@ public class PagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
 
-        switch (position){
-            case 0 :
-                return "Home";
-            case 1 :
-                return "Chat";
-            case 2 :
-                return "Wish House";
-        }
+//        switch (position){
+//            case 0 :
+//                return "Home";
+//            case 1 :
+//                return "Chat";
+//            case 2 :
+//                return "Wish House";
+//        }
         return super.getPageTitle(position);
     }
 }

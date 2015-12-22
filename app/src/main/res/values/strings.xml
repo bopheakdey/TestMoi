@@ -6,4 +6,20 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_search_location">SearchLocation</string>
+
+
+    <!-- chat-->
+    <string name="start_your_journey">Start your journey</string>
+    <string name="when_you_find_house">When you find a house you like, please feel free to connect the landlord for more information. You can ask us about anything, for instances, the price, the security.</string>
+    <string name="aww_you">Awww, You have not chatted with the Landlord Yet!</string>
+    <string name="search_nearby">Search nearby</string>
+    <string name="where_are_you_going_live">Where are you going to live?</string>
+
+
+    <!-- wish house-->
+    <string name="no_wish_house">You have not had any houses you wish to visit yet.</string>
+    <string name="if_you_meet">Please add the house into your list if you meet any houses you love so that you can choose your favorite one later.</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_nearby_place">Map</string>
+
 </resources>

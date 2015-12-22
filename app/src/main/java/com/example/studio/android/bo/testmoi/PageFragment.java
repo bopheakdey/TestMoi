@@ -84,7 +84,7 @@ public class PageFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-
+        super.onViewCreated(view, savedInstanceState);
         LinearLayoutManager layoutManager = new LinearLayoutManager(
                 getActivity());
 //        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);//set recycleview a horizontal orientation
@@ -107,7 +107,7 @@ public class PageFragment extends Fragment {
 
         RecyclerViewAdapter mAdapter = new RecyclerViewAdapter(getContext(),contactList);//RecyclerAdapter(dataset, getActivity());
         mRecyclerView.setAdapter(mAdapter);
-        super.onViewCreated(view, savedInstanceState);
+
     }
 
 //    // TODO: Rename method, update argument and hook method into UI event

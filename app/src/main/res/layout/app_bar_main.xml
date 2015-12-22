@@ -16,26 +16,11 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/light_pink"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
-    <!--<android.support.design.widget.TabLayout-->
-        <!--android:id="@+id/tabs"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="48dp"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:theme="@style/AppTheme.Tabs">-->
 
-    <!--</android.support.design.widget.TabLayout>-->
-    <!--<android.support.v4.view.ViewPager-->
-        <!--android:id="@+id/vp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@+id/tabs"-->
-       <!-->-->
-
-    <!--</android.support.v4.view.ViewPager>-->
 
     <include layout="@layout/content_main" />
     <android.support.design.widget.FloatingActionButton
@@ -44,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="10dp"
-        android:src="@drawable/ic_search_white_24px" />
+        android:src="@drawable/ic_search_white_24px"
+        />
 
 </android.support.design.widget.CoordinatorLayout>

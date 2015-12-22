@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="bottom">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_margin="10dp"
+        android:background="@drawable/rectangle_red_border_radius"
+        >
+        <com.example.studio.android.bo.testmoi.customview.TextViewGoodDog
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/aww_you"
+            android:textSize="20sp"
+            android:textColor="@android:color/tertiary_text_dark"/>
+        <com.example.studio.android.bo.testmoi.customview.TextViewGoodDog
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/when_you_find_house"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@android:color/secondary_text_dark"/>
+        <com.example.studio.android.bo.testmoi.customview.TextViewGoodDog
+            android:id="@+id/start_your_journey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:text="@string/start_your_journey"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:background="@color/colorAccent"/>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
