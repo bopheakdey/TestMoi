@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.studio.android.bo.testmoi.activity.CurrentLocationText;
 import com.example.studio.android.bo.testmoi.activity.MapsActivity;
 import com.example.studio.android.bo.testmoi.activity.NearbyPlaceActivity;
 import com.example.studio.android.bo.testmoi.activity.SearchLocation;
@@ -72,9 +73,10 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-//                Intent i = new Intent(getApplicationContext(), SearchLocation.class);
+                Intent i = new Intent(getApplicationContext(), SearchLocation.class);
 //                Intent i = new Intent(getApplicationContext(), MapsActivity.class);
-                Intent i = new Intent(getApplicationContext(), NearbyPlaceActivity.class);
+//                Intent i = new Intent(getApplicationContext(), NearbyPlaceActivity.class);
+//                Intent i = new Intent(getApplicationContext(), CurrentLocationText.class);
                 startActivity(i);
             }
         });
@@ -118,6 +120,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
+            Intent i = new Intent(getApplicationContext(), MapsActivity.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_send) {
 

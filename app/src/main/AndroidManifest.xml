@@ -65,7 +65,11 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".activity.NearbyPlaceActivity"
-            android:label="@string/title_activity_nearby_place"></activity>
+            android:label="@string/title_activity_nearby_place" />
+        <activity
+            android:name=".activity.CurrentLocationText"
+            android:label="@string/title_activity_current_location_text"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

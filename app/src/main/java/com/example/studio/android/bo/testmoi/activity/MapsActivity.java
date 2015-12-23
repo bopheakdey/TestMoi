@@ -1,6 +1,8 @@
 package com.example.studio.android.bo.testmoi.activity;
 
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -18,6 +20,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class MapsActivity extends FragmentActivity implements LocationListener{//implements OnMapReadyCallback {
 
@@ -65,7 +71,8 @@ public class MapsActivity extends FragmentActivity implements LocationListener{/
             mMap.addMarker(new MarkerOptions().position(latLng));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
             mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
-            locationTv.setText("Latitude: "+ latitude + ", Longitude: "+ longitude);
+//            locationTv.setText("Latitude: "+ latitude + ", Longitude: "+ longitude);
+            locationTv.setText("Location: "+ getLocationAddress(latitude, longitude));
 
         }
 
@@ -93,6 +100,128 @@ public class MapsActivity extends FragmentActivity implements LocationListener{/
             return false;
         }
     }
+
+//    public String getLocationAddress(double mLatitude, double mLongitude) {
+////        if (isLocationAvailable) {
+//            Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+//            //Get the current location from the input parameter list
+//            //Create a list to contain the result address
+//            List<Address> addresses = null;
+//            try {
+//                /*
+//                *return 1 address
+//                */
+//                addresses = geocoder.getFromLocation(mLatitude, mLongitude, 1);
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                return ("IOException trying to get address: " + e.getMessage());
+//            } catch (IllegalArgumentException e2) {
+//                // Error message to post in the log
+//                String errorString = "Illegal arguments "
+//                        + Double.toString(mLatitude) + " , "
+//                        + Double.toString(mLongitude)
+//                        + " passed to address service";
+//                e2.printStackTrace();
+//                return errorString;
+//            }
+//            //if the reverse geocode returned an address
+//            if (addresses != null && addresses.size() > 0) {
+//                //Get the first address
+//                Address address = addresses.get(0);
+//                /**
+//                 * Format the first line of address (if available), city, and country name.
+//                 */
+//                String addressText = String.format("%s,%s,%s",
+//                        //if there's a street address, add it
+//                        address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
+//                        //Locality is usally a city
+//                        address.getLocality(),
+//                        //the country of the address
+//                        address.getCountryName());
+//                return addressText;
+//            } else {
+//                return "No address found by the service: Note to the developers, If no address is found by google itself, there is nothing you can do about it.";
+//            }
+//
+////        } else {
+////            return "Location Not available";
+////        }
+//
+//    }
+public String getLocationAddress(double mLatitude, double mLongitude) {
+//        if (isLocationAvailable) {
+    Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+    //Get the current location from the input parameter list
+    //Create a list to contain the result address
+//        List<Address> addresses = null;
+//        try {
+//                /*
+//                *return 1 address
+//                */
+//            addresses = geocoder.getFromLocation(mLatitude, mLongitude, 1);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return ("IOException trying to get address: " + e.getMessage());
+//        } catch (IllegalArgumentException e2) {
+//            // Error message to post in the log
+//            String errorString = "Illegal arguments "
+//                    + Double.toString(mLatitude) + " , "
+//                    + Double.toString(mLongitude)
+//                    + " passed to address service";
+//            e2.printStackTrace();
+//            return errorString;
+//        }
+    //if the reverse geocode returned an address
+//        if (addresses != null && addresses.size() > 0) {
+//            //Get the first address
+//            Address address = addresses.get(0);
+    /**
+     * Format the first line of address (if available), city, and country name.
+     */
+//            String addressText = String.format("%s,%s,%s",
+//                    //if there's a street address, add it
+//                    address.getMaxAddressLineIndex() > 0 ? address.getAddressLine(0) : "",
+//                    //Locality is usally a city
+//                    address.getLocality(),
+//                    //the country of the address
+//                    address.getCountryName());
+//                    return addressText;
+
+    String result = null;
+    try {
+        List<Address> addressList = geocoder.getFromLocation(
+                mLatitude, mLongitude, 1);
+        if (addressList != null && addressList.size() > 0) {
+            Address address = addressList.get(0);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
+                sb.append(address.getAddressLine(i)).append("\n");
+            }
+//            sb.append(address.getLocality()).append("\n");
+//            sb.append(address.getPostalCode()).append("\n");
+            sb.append(address.getCountryName());
+            result = sb.toString();
+            return result;
+        } else {
+            return "No address found by the service: Note to the developers, If no address is found by google itself, there is nothing you can do about it.";
+        }
+    }catch (IOException e){
+        return e.getMessage();
+    }
+
+//        } else {
+//            return "Location Not available";
+//        }
+
+}
+
+
+
+
+
+
         /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.

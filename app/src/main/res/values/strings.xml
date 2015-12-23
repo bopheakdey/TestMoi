@@ -21,5 +21,6 @@
     <string name="if_you_meet">Please add the house into your list if you meet any houses you love so that you can choose your favorite one later.</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_nearby_place">Map</string>
+    <string name="title_activity_current_location_text">CurrentLocationText</string>
 
 </resources>
